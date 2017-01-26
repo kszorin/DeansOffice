@@ -83,4 +83,19 @@ public class Student implements Comparable<Student>{
         c.setStrength(Collator.PRIMARY);
         return c.compare(this.toString(), o.toString());
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Student student = (Student) o;
+
+        return id == student.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
 }
