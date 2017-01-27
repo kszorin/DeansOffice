@@ -121,36 +121,24 @@ public class ManageSystem {
     public void updateStudent (Student s) {
         for (Student si:students) {
             if (si.getId() == s.getId()) {
-                si = s;
+                si.setSurname(s.getSurname());
+                si.setName(s.getName());
+                si.setPatronimic(s.getPatronimic());
+                si.setGroupId(s.getGroupId());
                 break;
             }
         }
     }
 
-    public static void main (String[] args) {
+    /*public static void main (String[] args) {
         ManageSystem ms = ManageSystem.getInstance();
-        System.out.println("Список всех студентов:");
-        for (Student s:ms.getStudents())
-            System.out.println(s);
 
-        System.out.println("Список всех групп:");
+        System.out.println("*** Исходный список всех студентов: ***");
+        for (Student k:ms.getStudents())
+            System.out.println(k);
+
+        System.out.println("*** Исходнй список всех групп: ***");
         for (Group g:ms.getGroups())
             System.out.println(g);
-
-        Calendar calendar = Calendar.getInstance();
-
-        Student s = new Student();
-        s.setId(1);
-        s.setSurname("Иванов");
-        s.setName("Олег");
-        s.setPatronimic("Сергеевич");
-        calendar.set(1987,9,1);
-        s.setBirthday(calendar.getTime());
-        s.setSex('М');
-        s.setGroupId(1);
-
-        System.out.println (ms.getStudents().toArray()[1].hashCode());
-        System.out.println (s.hashCode());
-
-    }
+    }*/
 }
