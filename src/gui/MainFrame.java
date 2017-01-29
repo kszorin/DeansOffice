@@ -2,6 +2,7 @@ package gui;
 
 import logic.Group;
 import logic.ManageSystem;
+import logic.Student;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
@@ -17,7 +18,7 @@ public class MainFrame extends JFrame {
     public MainFrame() {
         getContentPane().setLayout(new BorderLayout());
 
-        //Верхняя панель - для установки года
+        //Верхняя панель (установка года)
         JPanel top = new JPanel();
         top.setLayout(new FlowLayout(FlowLayout.LEFT));
         top.add (new JLabel("Год обучения"));
@@ -25,29 +26,33 @@ public class MainFrame extends JFrame {
         JSpinner spYear = new JSpinner(sm);
         top.add(spYear);
 
-        //Нижняя панель - контейнер
+        //Нижняя панель-контейнер (содержит левую и правую панель)
         JPanel bottom = new JPanel();
-        bottom.setLayout(new BorderLayout());
+        bottom.setLayout(new BoxLayout(bottom,BoxLayout.X_AXIS));
 
-        //Левая нижняя панель - список групп
+        //Левая нижняя панель (список групп)
         JPanel leftbottom = new JPanel();
         leftbottom.setLayout(new BorderLayout());
         leftbottom.setBorder(new BevelBorder(BevelBorder.RAISED));
-
         Vector<Group> gr = new Vector<Group>(ms.getGroups());
+        leftbottom.add(new JLabel("Группы:"), BorderLayout.NORTH);
+        JList<Group> grList = new JList<Group>(gr);
+        leftbottom.add(new JScrollPane(grList), BorderLayout.CENTER);
 
         //Правая нижняя панель - список студентов
         JPanel rightbottom = new JPanel();
         rightbottom.setLayout(new BorderLayout());
         rightbottom.setBorder(new BevelBorder(BevelBorder.RAISED));
+        Vector<Student> st = new Vector<Student>(ms.getStudents());
+        rightbottom.add(new JLabel("Студенты:"), BorderLayout.NORTH);
+        JList<Student> stList = new JList<Student>(st);
+        rightbottom.add(new JScrollPane(stList), BorderLayout.CENTER);
 
-
-        //Вставляем левую и правую панели в нижнюю
+        //Вставляем левую и правую панели в нижнюю панель
         bottom.add(leftbottom);
         bottom.add(rightbottom);
 
-
-        // Вставляем верхнюю и нижнюю панели в форму
+        //Вставляем верхнюю и нижнюю панели в форму
         getContentPane().add(top, BorderLayout.NORTH);
         getContentPane().add(bottom, BorderLayout.CENTER);
 
