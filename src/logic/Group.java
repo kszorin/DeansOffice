@@ -5,8 +5,8 @@ package logic;
  */
 public class Group {
     private int id;
-    private String name;
-    private String curatorSurname;
+    private String groupName;
+    private String curatorName;
     private String specialName;
 
     public int getId() {
@@ -17,20 +17,20 @@ public class Group {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getGroupName() {
+        return groupName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
     }
 
-    public String getCuratorSurname() {
-        return curatorSurname;
+    public String getCuratorName() {
+        return curatorName;
     }
 
-    public void setCuratorSurname(String curatorSurname) {
-        this.curatorSurname = curatorSurname;
+    public void setCuratorName(String curatorName) {
+        this.curatorName = curatorName;
     }
 
     public String getSpecialName() {
@@ -43,6 +43,6 @@ public class Group {
 
     @Override
     public String toString() {
-        return name + " (" + specialName + ")";
+        return groupName + " (" + specialName + ")";
     }
 }

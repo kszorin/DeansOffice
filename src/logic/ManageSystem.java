@@ -32,16 +32,16 @@ public class ManageSystem {
 
         Group g = new Group();
         g.setId(1);
-        g.setName("204");
+        g.setGroupName("204");
         g.setSpecialName("Системы информатики");
-        g.setCuratorSurname("доцент Иванова");
+        g.setCuratorName("доцент Иванова");
         groups.add(g);
 
         g = new Group();
         g.setId(2);
-        g.setName("202");
+        g.setGroupName("202");
         g.setSpecialName("Компьютерная графика");
-        g.setCuratorSurname("профессор Утюгов");
+        g.setCuratorName("профессор Утюгов");
         groups.add(g);
     }
 
@@ -56,7 +56,7 @@ public class ManageSystem {
         Student s = new Student();
         s.setId(1);
         s.setSurname("Иванов");
-        s.setName("Олег");
+        s.setFirstname("Олег");
         s.setPatronimic("Сергеевич");
         calendar.set(1987,9,1);
         s.setBirthday(calendar.getTime());
@@ -67,7 +67,7 @@ public class ManageSystem {
         s = new Student();
         s.setId(2);
         s.setSurname("Жабова");
-        s.setName("Юлия");
+        s.setFirstname("Юлия");
         s.setPatronimic("Эдуардовна");
         calendar.set(1987,2,10);
         s.setBirthday(calendar.getTime());
@@ -78,7 +78,7 @@ public class ManageSystem {
         s = new Student();
         s.setId(3);
         s.setSurname("Кутузов");
-        s.setName("Аркадий");
+        s.setFirstname("Аркадий");
         s.setPatronimic("Прокопьевич");
         calendar.set(1986,3,5);
         s.setBirthday(calendar.getTime());
@@ -122,7 +122,7 @@ public class ManageSystem {
         for (Student si:students) {
             if (si.getId() == s.getId()) {
                 si.setSurname(s.getSurname());
-                si.setName(s.getName());
+                si.setFirstname(s.getFirstname());
                 si.setPatronimic(s.getPatronimic());
                 si.setGroupId(s.getGroupId());
                 break;

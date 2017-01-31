@@ -10,7 +10,7 @@ import java.util.Locale;
 public class Student implements Comparable<Student>{
     private int id;
     private String surname;
-    private String name;
+    private String firstname;
     private String patronimic;
     private Date birthday;
     private char sex;
@@ -32,12 +32,12 @@ public class Student implements Comparable<Student>{
         this.surname = surname;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
     public String getPatronimic() {
@@ -74,7 +74,7 @@ public class Student implements Comparable<Student>{
 
     @Override
     public String toString() {
-        return surname + " " + name + " " + patronimic;
+        return surname + " " + firstname + " " + patronimic;
     }
 
     @Override

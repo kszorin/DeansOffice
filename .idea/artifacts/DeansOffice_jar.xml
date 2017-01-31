@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DeansOffice:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DeansOffice_jar</output-path>
+    <root id="archive" name="DeansOffice.jar">
+      <element id="module-output" name="DeansOffice" />
+    </root>
+  </artifact>
+</component>
