@@ -13,11 +13,15 @@ public class TestJDBC {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/students";
+            String url = "jdbc:mysql://localhost:3306/deans_office";
             connection = DriverManager.getConnection(url, "kszorin", "mysql");
             statement = connection.createStatement();
             result = statement.executeQuery("SELECT * FROM students");
-
+            String str;
+            while (result.next()) {
+                str = result.getString(1) + ":" + result.getString(2);
+                System.out.println(str);
+            }
         }catch(Exception e) {
             e.printStackTrace();
         } finally {
