@@ -6,10 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffb8f676-63ad-446b-b6e0-8193decfef93" name="Default" comment="add DB">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+    <list default="true" id="ffb8f676-63ad-446b-b6e0-8193decfef93" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/MainFrame.java" afterPath="$PROJECT_DIR$/src/gui/MainFrame.java" />
     </list>
     <ignored path="DeansOffice.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -891,7 +889,7 @@
       <workItem from="1485918314653" duration="7045000" />
       <workItem from="1485929426521" duration="142000" />
       <workItem from="1485930949070" duration="345000" />
-      <workItem from="1486024454200" duration="7995000" />
+      <workItem from="1486024454200" duration="8061000" />
     </task>
     <task id="LOCAL-00001" summary="add DB">
       <created>1485848936289</created>
@@ -899,11 +897,17 @@
       <option name="project" value="LOCAL" />
       <updated>1485848936289</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="GUI changes">
+      <created>1486050167141</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1486050167141</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68537000" />
+    <option name="totallyTimeSpent" value="68603000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -958,7 +962,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="add DB" />
+    <MESSAGE value="GUI changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
