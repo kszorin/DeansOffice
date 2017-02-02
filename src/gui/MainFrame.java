@@ -6,7 +6,11 @@ import logic.Student;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Vector;
 
 /**
@@ -32,29 +36,50 @@ public class MainFrame extends JFrame {
 
         //Левая нижняя панель (список групп)
         JPanel leftbottom = new JPanel();
-        leftbottom.setLayout(new BorderLayout());
+        leftbottom.setLayout(new BoxLayout(leftbottom,BoxLayout.Y_AXIS));
         leftbottom.setBorder(new BevelBorder(BevelBorder.RAISED));
         Vector<Group> gr = new Vector<Group>(ms.getGroups());
-        leftbottom.add(new JLabel("Группы:"), BorderLayout.NORTH);
+        leftbottom.add(new JLabel("Группы:"));
         JList<Group> grList = new JList<Group>(gr);
-        leftbottom.add(new JScrollPane(grList), BorderLayout.CENTER);
+        leftbottom.add(new JScrollPane(grList));
 
         //Правая нижняя панель - список студентов
         JPanel rightbottom = new JPanel();
-        rightbottom.setLayout(new BorderLayout());
+        rightbottom.setLayout(new BoxLayout(rightbottom,BoxLayout.Y_AXIS));
         rightbottom.setBorder(new BevelBorder(BevelBorder.RAISED));
         Vector<Student> st = new Vector<Student>(ms.getStudents());
         rightbottom.add(new JLabel("Студенты:"), BorderLayout.NORTH);
         JList<Student> stList = new JList<Student>(st);
-        rightbottom.add(new JScrollPane(stList), BorderLayout.CENTER);
+        stList.setSelectedIndex(ListSelectionModel.SINGLE_SELECTION);
+        stList.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting())
+                    System.out.println("New index:" + stList.getSelectedIndex());
+            }
+        });
+        //Поля для добавления информации о студенте
+        JTextField surnameTextfield = new JTextField();
+        JTextField nameTextfield = new JTextField();
+        JTextField patronymicTextfield = new JTextField();
+        JTextField birthdayTextfield = new JTextField();
+        JTextField surnameTextfield = new JTextField();
+
+        //Кнопка добавления
+        JButton addStudentBotton = new JButton("Добавить");
+
+        rightbottom.add(new JScrollPane(stList));
+        rightbottom.add(surnameTextfield);
+        rightbottom.add(addStudentBotton);
+
 
         //Вставляем левую и правую панели в нижнюю панель
         bottom.add(leftbottom);
         bottom.add(rightbottom);
 
         //Вставляем верхнюю и нижнюю панели в форму
-        getContentPane().add(top, BorderLayout.NORTH);
-        getContentPane().add(bottom, BorderLayout.CENTER);
+        add(top, BorderLayout.NORTH);
+        add(bottom, BorderLayout.CENTER);
 
         // Задаем границы формы
         setBounds(100, 100, 600, 400);
